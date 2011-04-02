@@ -1,0 +1,19 @@
+\documentclass{article}
+
+\immediate\write18{git tex > \jobname.gtx}
+\InputIfFileExists{\jobname.gtx}{}{}
+\providecommand*{\githash}{info not available}
+\providecommand*{\gitdate}{\today}
+\providecommand*{\gitrefnames}{}
+
+\begin{document}
+
+\verb+\gitdate+ = ``\gitdate''
+
+\verb+\githash+ = ``\githash''
+
+\verb+\gitrefnames+ = ``\gitrefnames''
+
+\thispagestyle{empty}
+
+\end{document}
