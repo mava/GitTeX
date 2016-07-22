@@ -8,21 +8,21 @@ How to add Git version control info to your LaTeX documents
 
 Create once and for all a `git tex` alias by running the following command from inside your `git` repository:
 
-    git config alias.tex "log -1 --pretty=format:'\\newcommand*{\\githash}{\texttt{%h}}%n\\newcommand*{\\gitdate}{%ad}%n\\newcommand*{\\gitrefnames}{\\scriptsize\\texttt{%d}}%n'"
+    git config alias.tex "log -1 --pretty=format:'\\newcommand*{\\gitdate}{%ad}%n\\newcommand*{\\githash}{\texttt{%h}}%n\\newcommand*{\\gitrefnames}{\\scriptsize\\texttt{%d}}%n'"
 
 If you want to have the alias available everywhere on your local machine, use the `--global` flag:  
 
-    git config --global alias.tex "log -1 --pretty=format:'\\newcommand*{\\githash}{\texttt{%h}}%n\\newcommand*{\\gitdate}{%ad}%n\\newcommand*{\\gitrefnames}{\\scriptsize\\texttt{%d}}%n'"
+    git config --global alias.tex "log -1 --pretty=format:'\\newcommand*{\\gitdate}{%ad}%n\\newcommand*{\\githash}{\texttt{%h}}%n\\newcommand*{\\gitrefnames}{\\scriptsize\\texttt{%d}}%n'"
 
 Alternatively, you could add the following lines to your `.git/config` or `$HOME/.gitconfig` file:
 
     [alias]
-            tex = log -1 --pretty=format:'\\newcommand*{\\githash}{\texttt{%h}}%n\\newcommand*{\\gitdate}{%ad}%n\\newcommand*{\\gitrefnames}{\\scriptsize\\texttt{%d}}%n'
+            tex = log -1 --pretty=format:'\\newcommand*{\\gitdate}{%ad}%n\\newcommand*{\\githash}{\texttt{%h}}%n\\newcommand*{\\gitrefnames}{\\scriptsize\\texttt{%d}}%n'
 
 Then invoking `git tex` produces an output like this:
 
-    \newcommand*{\githash}{\texttt{34f8465}}
-    \newcommand*{\gitdate}{Fri Nov 2 13:58:33 2012 -0400}
+    \newcommand*{\gitdate}{Fri Jul 22 10:14:47 2016 -0400}
+    \newcommand*{\githash}{\texttt{f82470d}}
     \newcommand*{\gitrefnames}{\scriptsize\texttt{ (HEAD -> master, github/master)}}
 
 (You can use options like `git tex --date=short` and `git tex --decorate=full`, too.)
@@ -41,14 +41,14 @@ Add the following lines to the preamble of your LaTeX file:
 
 If `git tex` ran successfully then:
 
-- `\githash` = abbreviated commit hash
 - `\gitdate` = author date (format respects `--date=` option)
+- `\githash` = abbreviated commit hash
 - `\gitrefnames` = ref names, like the `--decorate` option of `git log` (format respects `--decorate=` option)
 
 otherwise:
 
-- `\githash` = `info not available`
 - `\gitdate` = `\today`
+- `\githash` = `info not available`
 - `\gitrefnames` = empty string
 
 (or whatever you specified in the `\providecommand`s above).
