@@ -1,8 +1,8 @@
 GitTeX
 ======
 
-How to add Git version control info to your LaTeX documents
------------------------------------------------------------
+How to use Git version control info in LaTeX
+--------------------------------------------
 
 ### Preliminary setup
 
