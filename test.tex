@@ -1,5 +1,9 @@
 \documentclass{article}
 
+\title{Git\TeX}
+\author{\texttt{github.com/mava/GitTeX}}
+\date{\small\gitdate, revision \githash\gitrefnames}
+
 % see github.com/mava/GitTeX
 \immediate\write18{git tex > \jobname.gtx}
 \InputIfFileExists{\jobname.gtx}{}{}
@@ -9,12 +13,13 @@
 
 \begin{document}
 
+\maketitle
+\thispagestyle{empty}
+
 \verb+\gitdate+ = ``\gitdate''
 
 \verb+\githash+ = ``\githash''
 
 \verb+\gitrefnames+ = ``\gitrefnames''
-
-\thispagestyle{empty}
 
 \end{document}

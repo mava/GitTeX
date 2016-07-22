@@ -8,22 +8,22 @@ How to add Git version control info to your LaTeX documents
 
 Create once and for all a `git tex` alias by running the following command from inside your `git` repository:
 
-    git config alias.tex "log -1 --pretty=format:'\\newcommand*{\\gitdate}{%ad}%n\\newcommand*{\\githash}{\texttt{%h}}%n\\newcommand*{\\gitrefnames}{{\\scriptsize\\texttt{%d}}}%n'"
+    git config alias.tex "log -1 --pretty=format:'\newcommand*{\gitdate}{%ad}%n\newcommand*{\githash}{\texttt{%h}}%n\newcommand*{\gitrefnames}{{\scriptsize\texttt{%d}}}%n'"
 
 If you want to have the alias available everywhere on your local machine, use the `--global` flag:  
 
-    git config --global alias.tex "log -1 --pretty=format:'\\newcommand*{\\gitdate}{%ad}%n\\newcommand*{\\githash}{\texttt{%h}}%n\\newcommand*{\\gitrefnames}{{\\scriptsize\\texttt{%d}}}%n'"
+    git config --global alias.tex "log -1 --pretty=format:'\newcommand*{\gitdate}{%ad}%n\newcommand*{\githash}{\texttt{%h}}%n\newcommand*{\gitrefnames}{{\scriptsize\texttt{%d}}}%n'"
 
 Alternatively, you could add the following lines to your `.git/config` or `$HOME/.gitconfig` file:
 
     [alias]
-            tex = log -1 --pretty=format:'\\newcommand*{\\gitdate}{%ad}%n\\newcommand*{\\githash}{\texttt{%h}}%n\\newcommand*{\\gitrefnames}{{\\scriptsize\\texttt{%d}}}%n'
+            tex = log -1 --pretty=format:'\newcommand*{\gitdate}{%ad}%n\newcommand*{\githash}{\texttt{%h}}%n\newcommand*{\gitrefnames}{{\scriptsize\texttt{%d}}}%n'
 
 Then invoking `git tex` produces an output like this:
 
-    \newcommand*{\gitdate}{Fri Jul 22 10:14:47 2016 -0400}
-    \newcommand*{\githash}{\texttt{f82470d}}
-    \newcommand*{\gitrefnames}{\scriptsize\texttt{ (HEAD -> master, github/master)}}
+    \newcommand*{\gitdate}{Fri Jul 22 10:55:58 2016 -0400}
+    \newcommand*{\githash}{\texttt{a0155de}}
+    \newcommand*{\gitrefnames}{{\scriptsize\texttt{ (HEAD -> master, github/master)}}}
 
 (You can use options like `git tex --date=short` and `git tex --decorate=full`, too.)
 
@@ -55,9 +55,9 @@ otherwise:
 
 These commands could then be used as follows, for example:
 
-    \date{\gitdate, revision \githash \gitrefnames}
+    \date{\gitdate, revision \githash\gitrefnames}
 
-You need to invoke `(pdf)latex --shell-escape` or you need to enable shell escape globally, for example by running `tlmgr conf texmf shell_escape t`.
+You need to invoke `(pdf)latex --shell-escape` or to enable shell escape globally, for example by running `tlmgr conf texmf shell_escape t`.
 
 Oddly enough, if shell escape is only enabled partially (set to `p`) then adding `git` to `shell_escape_commands` does *not* work, and running `(pdf)latex` produces the following error message:
 
