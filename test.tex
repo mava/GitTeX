@@ -1,9 +1,10 @@
 \documentclass{article}
 
+% see github.com/mava/GitTeX
 \immediate\write18{git tex > \jobname.gtx}
 \InputIfFileExists{\jobname.gtx}{}{}
-\providecommand*{\githash}{info not available}
 \providecommand*{\gitdate}{\today}
+\providecommand*{\githash}{info not available}
 \providecommand*{\gitrefnames}{}
 
 \begin{document}
