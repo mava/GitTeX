@@ -1,0 +1,3 @@
+\newcommand*{\gitdate}{Fri Jul 22 10:48:29 2016 -0400}
+\newcommand*{\githash}{\texttt{66c3087}}
+\newcommand*{\gitrefnames}{{\scriptsize\texttt{ (HEAD -> master, github/master)}}}

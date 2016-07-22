@@ -57,8 +57,6 @@ These commands could then be used as follows, for example:
 
     \date{\gitdate, revision \githash \gitrefnames}
 
-If you want to use `\gitrefnames`, you need `\usepackage[utf8]{inputenc}`, because it will contain characters like `->`.
-
 You need to invoke `(pdf)latex --shell-escape` or you need to enable shell escape globally, for example by running `tlmgr conf texmf shell_escape t`.
 
 Oddly enough, if shell escape is only enabled partially (set to `p`) then adding `git` to `shell_escape_commands` does *not* work, and running `(pdf)latex` produces the following error message:

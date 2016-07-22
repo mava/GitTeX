@@ -1,7 +1,6 @@
-*~
 README.html
-*.aux
-*.gtx
-*.log
-*.pdf
-*.synctex.gz
+test.aux
+test.fdb_latexmk
+test.fls
+test.log
+test.synctex.gz
