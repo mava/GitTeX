@@ -8,16 +8,16 @@ How to add Git version control info to your LaTeX documents
 
 Create once and for all a `git tex` alias by running the following command from inside your `git` repository:
 
-    git config alias.tex "log -1 --pretty=format:'\\newcommand*{\\gitdate}{%ad}%n\\newcommand*{\\githash}{\texttt{%h}}%n\\newcommand*{\\gitrefnames}{\\scriptsize\\texttt{%d}}%n'"
+    git config alias.tex "log -1 --pretty=format:'\\newcommand*{\\gitdate}{%ad}%n\\newcommand*{\\githash}{\texttt{%h}}%n\\newcommand*{\\gitrefnames}{{\\scriptsize\\texttt{%d}}}%n'"
 
 If you want to have the alias available everywhere on your local machine, use the `--global` flag:  
 
-    git config --global alias.tex "log -1 --pretty=format:'\\newcommand*{\\gitdate}{%ad}%n\\newcommand*{\\githash}{\texttt{%h}}%n\\newcommand*{\\gitrefnames}{\\scriptsize\\texttt{%d}}%n'"
+    git config --global alias.tex "log -1 --pretty=format:'\\newcommand*{\\gitdate}{%ad}%n\\newcommand*{\\githash}{\texttt{%h}}%n\\newcommand*{\\gitrefnames}{{\\scriptsize\\texttt{%d}}}%n'"
 
 Alternatively, you could add the following lines to your `.git/config` or `$HOME/.gitconfig` file:
 
     [alias]
-            tex = log -1 --pretty=format:'\\newcommand*{\\gitdate}{%ad}%n\\newcommand*{\\githash}{\texttt{%h}}%n\\newcommand*{\\gitrefnames}{\\scriptsize\\texttt{%d}}%n'
+            tex = log -1 --pretty=format:'\\newcommand*{\\gitdate}{%ad}%n\\newcommand*{\\githash}{\texttt{%h}}%n\\newcommand*{\\gitrefnames}{{\\scriptsize\\texttt{%d}}}%n'
 
 Then invoking `git tex` produces an output like this:
 
